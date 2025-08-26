@@ -23,13 +23,14 @@
   // =============================================================================
   // 2. EDITOR BEHAVIOR
   // =============================================================================
-  "relative_line_numbers": true, // Show line numbers relative to cursor
+  "relative_line_numbers": false, // Show line numbers relative to cursor
   "indent_guides": {
     "enabled": true,
     "coloring": "indent_aware" // Color guides based on indentation level
   },
   "inline_code_actions": false, // Disable inline code actions (can clutter editor)
   "vim_mode": false, // Use standard insert mode (no Vim keybindings)
+  "autosave": "on_focus_change",
 
   // =============================================================================
   // 3. NAVIGATION & LAYOUT
@@ -115,5 +116,5 @@
   // =============================================================================
   // 10. KEYBINDINGS
   // =============================================================================
-  "base_keymap": "JetBrains" // Use JetBrains-style keybindings (familiar for many devs)
+  "base_keymap": "JetBrains" // Use JetBrains-style keybindings
 }
