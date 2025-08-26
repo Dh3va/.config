@@ -1,72 +1,119 @@
-// Zed settings
+// =============================================================================
+// ZED CONFIGURATION FILE
+// =============================================================================
+// This file configures Zed (https://zed.dev)
 //
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
+// For full documentation on available settings, see:
+// https://zed.dev/docs/configuring-zed
 //
-// To see all of Zed's default settings without changing your
-// custom settings, run `zed: open default settings` from the
-// command palette (cmd-shift-p / ctrl-shift-p)
+// To view default settings without modifying your config, run:
+// `zed: open default settings` from the command palette (Cmd+Shift+P / Ctrl+Shift+P)
+// =============================================================================
+
 {
-  "edit_predictions": {
-    "disabled_globs": [],
-    "mode": "eager",
-    "copilot": {
-      "proxy": null,
-      "proxy_no_verify": null,
-      "enterprise_uri": null
-    },
-    "enabled_in_text_threads": false
-  },
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
-  "lsp_document_colors": "inlay",
-  "inline_code_actions": false,
-  "minimap": {
-    "show": "never"
-  },
-  "search": {
-    "button": false,
-    "case_sensitive": true
-  },
-  "project_panel": {
-    "starts_open": true,
-    "sticky_scroll": true,
-    "dock": "left"
-  },
-  "toolbar": {
-    "breadcrumbs": true,
-    "quick_actions": false,
-    "selections_menu": false
-  },
+  // =============================================================================
+  // 1. APPEARANCE & VISUALS
+  // =============================================================================
+  "theme": "Github Light",
+  "ui_font_size": 14, // Font size for UI elements (menus, panels)
+  "buffer_font_size": 13, // Font size for editor content
+  "cursor_blink": false, // Disable cursor blink for focus
+  "hide_mouse": "on_typing_and_movement", // Hide mouse when typing/moving to reduce distractions
+
+  // =============================================================================
+  // 2. EDITOR BEHAVIOR
+  // =============================================================================
+  "relative_line_numbers": true, // Show line numbers relative to cursor
   "indent_guides": {
     "enabled": true,
-    "coloring": "indent_aware"
+    "coloring": "indent_aware" // Color guides based on indentation level
   },
-  "hide_mouse": "on_typing_and_movement",
-  "inlay_hints": {
-    "enabled": false
+  "inline_code_actions": false, // Disable inline code actions (can clutter editor)
+  "vim_mode": false, // Use standard insert mode (no Vim keybindings)
+
+  // =============================================================================
+  // 3. NAVIGATION & LAYOUT
+  // =============================================================================
+  "project_panel": {
+    "starts_open": true, // Project panel opens by default
+    "sticky_scroll": true, // Keep scroll position when switching files
+    "dock": "left" // Dock project panel to the left
   },
-  "agent": {
-    "inline_assistant_model": {
-      "provider": "lmstudio",
-      "model": "qwen/qwen3-coder-30b"
-    },
-    "default_profile": "ask",
-    "default_model": {
-      "provider": "lmstudio",
-      "model": "qwen/qwen3-30b-a3b-2507"
+  "tab_bar": {
+    "show": true // Always show tabs
+  },
+  "toolbar": {
+    "breadcrumbs": true, // Show file path breadcrumbs
+    "quick_actions": false, // Hide quick actions (can clutter UI)
+    "selections_menu": false // Hide selections menu
+  },
+  "status_bar": {
+    "active_language_button": false // Hide language mode button
+  },
+  "preview_tabs": {
+    "enabled": false // Disable preview tabs (no split view on hover)
+  },
+
+  // =============================================================================
+  // 4. SCROLLING & VISUAL FEEDBACK
+  // =============================================================================
+  "scrollbar": {
+    "show": "never" // Hide scrollbar
+  },
+  "minimap": {
+    "show": "never" // Disable minimap
+  },
+
+  // =============================================================================
+  // 5. GIT & CODE INTELLIGENCE
+  // =============================================================================
+  "git": {
+    "git_gutter": "tracked_files", // Show gutter marks for tracked files only
+    "inline_blame": {
+      "enabled": true // Show blame info inline (great for code review)
     }
   },
-  "telemetry": {
-    "metrics": false
+
+  // =============================================================================
+  // 6. SEARCH & FIND
+  // =============================================================================
+  "search": {
+    "button": false, // Hide search button (use keyboard shortcut)
+    "case_sensitive": true // Default to case-sensitive search
   },
-  "base_keymap": "JetBrains",
-  "ui_font_size": 14,
-  "buffer_font_size": 13,
-  "theme": {
-    "mode": "system",
-    "light": "Github Light",
-    "dark": "One Dark"
-  }
+
+  // =============================================================================
+  // 7. AI & CODE ASSISTANTS (Zed Agent)
+  // =============================================================================
+  "agent": {
+    "default_profile": "ask", // Default assistant profile: "ask" mode
+    "default_model": {
+      "provider": "lmstudio",
+      "model": "qwen/qwen3-30b-a3b-2507" // Primary model for general tasks
+    },
+    "inline_assistant_model": {
+      "provider": "lmstudio",
+      "model": "qwen/qwen3-coder-30b" // Specialized model for coding tasks
+    }
+  },
+
+  // =============================================================================
+  // 8. LANGUAGE SERVER & INTELLIGENCE
+  // =============================================================================
+  "features": {
+    "edit_prediction_provider": "zed" // Use Zed's built-in AI for code predictions
+  },
+
+  // =============================================================================
+  // 9. PRIVACY & PERFORMANCE
+  // =============================================================================
+  "telemetry": {
+    "metrics": false, // Disable usage analytics
+    "diagnostics": false // Disable diagnostic reporting
+  },
+
+  // =============================================================================
+  // 10. KEYBINDINGS
+  // =============================================================================
+  "base_keymap": "JetBrains" // Use JetBrains-style keybindings (familiar for many devs)
 }
